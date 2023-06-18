@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Bài Tập của Vân</title>
+
 </head>
+
 <body>
     <p id="a"></p>
     <p id="b"></p>
     <p id="c"></p>
     <p id="d"></p>
-    <button id=" hien">HIỆN</button>
+    <p id="e" style="display: none;">Thẻ này sẽ hiện nếu bấm nút</p>
+    <button id="hien">HIỆN</button>
+
     <script>
-        var theP= document.getElementById("a");
-        var theP2=document.getElementById("b");
-        var theP3=document.getElementById("c");
-        var theP4=document.getElementById("d")
-        alert ("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
-        var name= prompt(" Hãy nhập tên của bạn.");
-        theP.innerHTML= name;
-        var thanhpho= prompt(" Hãy nhập thành phố mà bạn đang sinh sống");
-        theP2.innerHTML= thanhpho;
-        var sdt= prompt("Hãy nhập số điện thoại của bạn");
-        theP3.innerHTML= sdt;
-        
-        var yeucaunhap= true;
-        while (yeucaunhap){
-            var namsinh= prompt("Hãy nhập năm sinh của bạn");
-            theP4.innerHTML= namsinh;
-        var now = new Date().getFullYear(); 
-        if (namsinh> now){
-            theP4.innerHTML= "Năm nay mới là năm" + now;
+        alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+        var theP = document.getElementById("a");
+        var theP2 = document.getElementById("b");
+        var theP3 = document.getElementById("c");
+        var theP4 = document.getElementById("d");
+        var theP5 = document.getElementById("e");
 
-        }else {
-            yeucaunhap= false;
+        var name = prompt("Hãy nhập tên của bạn.");
+        theP.innerHTML = name;
+        var thanhpho = prompt("Hãy nhập thành phố mà bạn đang sinh sống.");
+        theP2.innerHTML = thanhpho;
+        var sdt = prompt("Hãy nhập số điện thoại của bạn.");
+        theP3.innerHTML = sdt;
+
+        var yeucaunhap = true;
+        while (yeucaunhap) {
+            var namsinh = prompt("Hãy nhập năm sinh của bạn.");
+            theP4.innerHTML = namsinh;
+            var now = new Date().getFullYear();
+            if (namsinh > now) {
+                theP4.innerHTML = "Năm nay mới là năm" + now;
+            } else {
+                yeucaunhap = false;
+            }
         }
+        document.getElementById("hien").onclick = nuthien;
+        function nuthien() {
+            console.log("Đã bấm nút");
+            theP5.style= "display: iinline";
         }
-        document.getElementById("hien").onclick = hienan ;
-        function hienan(){
-            console.log(" đã bấm nút");
-        }
-
-        
-
-
-
-        
     </script>
 </body>
+
 </html>
